@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M Srinivasan - Portfolio</title>
-    <link rel="icon" type="image/jpg" href="/images/Main_croppe.jpg">
+    <link rel="icon" type="image/jpg" href="/images/Main_cropped.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -363,11 +363,11 @@
         }
 
         .profile-image {
-            width: 200px;  /* set explicit width */
-            height: 200px; /* set explicit height */
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary)),
-                        url('images/Main_cropped.jpg') center/cover no-repeat;
+            background: url('images/Main_cropped.jpg') center/cover no-repeat,
+                        linear-gradient(135deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -376,6 +376,7 @@
             position: relative;
             overflow: hidden;
         }
+
 
         .profile-image::before {
             content: '';
@@ -955,7 +956,7 @@
         <div class="hero-content">
             <!-- Hero Text -->
             <div class="hero-text">
-                <h1>Hi, I'm <span class="highlight">M Srinivasan</span></h1>
+                <h1>Hi, I'm <span class="highlight">Srinivasan M</span></h1>
                 <p class="subtitle">AI & ML Research Enthusiast | LLM Security & Safety | GraphRAGs</p>
                 <div class="cta-buttons">
                     <a href="#projects" class="btn-primary">View My Work</a>
@@ -1093,7 +1094,7 @@
                         <img src="images/github.png" alt="GitHub" class="contact-link-icon"> GitHub
                     </a>
                     <a href="https://www.linkedin.com/in/srinivasan-m-668154228/" class="contact-link">
-                        <img src="images/linkedin.png" alt="LinkedIn" class="contact-link-icon"> LinkedIn
+                        <img src="images/linkedIn.png" alt="LinkedIn" class="contact-link-icon"> LinkedIn
                     </a>
                 </div>
             </div>
