@@ -366,8 +366,12 @@
             width: 200px;
             height: 200px;
             border-radius: 50%;
-            background: url('images/Main_cropped.jpg') center/cover no-repeat,
-                        linear-gradient(135deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary));
+            background-image: 
+                url('images/Main_cropped.jpg'),
+                linear-gradient(135deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary));
+            background-size: cover, cover;  /* make both layers fill the circle */
+            background-position: center, center; /* center them */
+            background-repeat: no-repeat, no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -376,6 +380,7 @@
             position: relative;
             overflow: hidden;
         }
+
 
 
         .profile-image::before {
