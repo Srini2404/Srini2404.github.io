@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M Srinivasan - Portfolio</title>
+    <link rel="icon" type="image/jpg" href="/images/Main_croppe.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -950,57 +951,73 @@
         </nav>
     </header>
 
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Hi, I'm <span class="highlight">M Srinivasan</span></h1>
-                    <p class="subtitle"></p>
-                    <div class="cta-buttons">
-                        <a href="#projects" class="btn-primary">View My Work</a>
-                        <a href="#contact" class="btn-secondary">Let's Connect</a>
-                    </div>
+   <section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <!-- Hero Text -->
+            <div class="hero-text">
+                <h1>Hi, I'm <span class="highlight">M Srinivasan</span></h1>
+                <p class="subtitle">AI & ML Research Enthusiast | LLM Security & Safety | GraphRAGs</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn-primary">View My Work</a>
+                    <a href="#contact" class="btn-secondary">Let's Connect</a>
                 </div>
-                <div class="hero-image">
-                    <div class="profile-container">
-                        <div class="profile-rings">
-                            <div class="profile-ring"></div>
-                            <div class="profile-ring"></div>
-                            <div class="profile-ring"></div>
-                        </div>
-                        <div class="profile-image"><img src="images/Main_cropped.jpg" alt="Profile Image"></div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="hero-image">
+                <div class="profile-container">
+                    <div class="profile-rings">
+                        <div class="profile-ring"></div>
+                        <div class="profile-ring"></div>
+                        <div class="profile-ring"></div>
+                    </div>
+                    <div class="profile-image">
+                        <img src="images/Main_cropped.jpg" alt="Profile Image">
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </section>
 
+
     <section class="section" id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-visual">
-                    🚀
-                </div>
-                <div class="about-text">
-                    <p>With over 5 years of experience in web development, I specialize in creating innovative digital solutions that merge exceptional user experience with robust functionality. My journey began with a fascination for how technology can solve real-world problems.</p>
-                    <p>I thrive on challenges that push the boundaries of what's possible on the web. From concept to deployment, I ensure every project reflects attention to detail, performance optimization, and user-centered design principles.</p>
-                    <div class="skills-grid">
-                        <div class="skill-item">JavaScript</div>
-                        <div class="skill-item">React.js</div>
-                        <div class="skill-item">Node.js</div>
-                        <div class="skill-item">Python</div>
-                        <div class="skill-item">TypeScript</div>
-                        <div class="skill-item">MongoDB</div>
-                        <div class="skill-item">AWS</div>
-                        <div class="skill-item">Docker</div>
-                        <div class="skill-item">GraphQL</div>
-                        <div class="skill-item">Next.js</div>
-                    </div>
+    <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <!-- Visual Icon / Illustration -->
+            <div class="about-visual">
+                <span class="emoji">🚀</span>
+            </div>
+
+            <!-- Textual Content -->
+            <div class="about-text">
+                <p>I'm <strong>M Srinivasan</strong>, currently a Visitor Research Intern at the <strong>TrustWare Research Group</strong> under <a href="https://www.linkedin.com/in/ezekiel/" target="_blank">Prof. Ezekiel</a> and <a href="https://www.linkedin.com/in/sarang-nambiar/" target="_blank">Sarang Nambiar</a>. My research focuses on <strong>LLM security, safety, and robustness</strong>, particularly exploring vulnerabilities such as backdoor attacks and building resilient AI systems.</p>
+                
+                <p>Prior to this, I worked at <strong>IBM Research Labs India</strong> with the <strong>AI for Quantum Data Engineering Team</strong>. There, I collaborated with leading researchers such as <a href="https://www.linkedin.com/in/mentor1/" target="_blank">[Mentor 1]</a> and <a href="https://www.linkedin.com/in/mentor2/" target="_blank">[Mentor 2]</a>, where I helped design and implement <strong>GraphRAG systems for intelligent data catalogs</strong>, enabling data engineering teams to efficiently query and explore metadata.</p>
+                
+                <p>My work bridges <strong>AI research and practical engineering</strong>, combining cutting-edge machine learning techniques with real-world applications. I am deeply interested in <strong>ML system robustness, security in large language models, and graph-based retrieval systems</strong>. Beyond research, I enjoy hiking, photography, and travelling.</p>
+
+                <!-- Skills Grid -->
+                <h3 class="skills-title">Skills & Tools</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">Python</div>
+                    <div class="skill-item">PyTorch</div>
+                    <div class="skill-item">TensorFlow</div>
+                    <div class="skill-item">LLM Security</div>
+                    <div class="skill-item">GraphRAGs</div>
+                    <div class="skill-item">SQL & Neo4j</div>
+                    <div class="skill-item">Docker</div>
+                    <div class="skill-item">AWS</div>
+                    <div class="skill-item">TypeScript</div>
+                    <div class="skill-item">Next.js</div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <section class="section" id="projects">
         <div class="container">
@@ -1174,7 +1191,7 @@
                     }
                 };
                 
-                this.fallbackCount = 1247;
+                this.fallbackCount = 100; // Fallback visitor count
                 this.sessionViews = 0;
                 this.init();
             }
