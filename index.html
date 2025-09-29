@@ -363,18 +363,16 @@
         }
 
         .profile-image {
-            width: 100%;
-            height: 100%;
+            width: 200px;  /* set explicit width */
+            height: 200px; /* set explicit height */
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary));
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary)),
+                        url('images/Main_cropped.jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 7rem;
-            animation: profileFloat 4s ease-in-out infinite;
-            box-shadow: 
-                0 30px 80px rgba(99, 102, 241, 0.3),
-                inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 30px 80px rgba(99, 102, 241, 0.3),
+                        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
         }
@@ -974,7 +972,7 @@
                         <div class="profile-ring"></div>
                     </div>
                     <div class="profile-image">
-                        <img src="images/Main_cropped.jpg" alt="Profile Image">
+                        <!-- <img src="images/Main_cropped.jpg" alt="Profile Image"> -->
                     </div>
                 </div>
             </div>
