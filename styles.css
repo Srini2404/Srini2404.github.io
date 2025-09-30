@@ -546,47 +546,36 @@
         }
 
         /* Projects Section */
+                
         .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 2.5rem;
+            display: flex;
+            flex-wrap: wrap; /* allow wrapping to next row */
+            gap: 2rem; /* spacing between cards */
+            justify-content: space-between; /* spread cards evenly */
         }
 
-        .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    gap: 2rem; /* spacing between cards */
-}
+        .project-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            backdrop-filter: blur(20px);
 
-.projects-grid {
-    display: flex;
-    flex-wrap: wrap; /* allow wrapping to next row */
-    gap: 2rem; /* spacing between cards */
-    justify-content: space-between; /* spread cards evenly */
-}
+            /* Flex properties for 2 per row */
+            flex: 0 0 calc(50% - 1rem); /* 50% width minus half the gap */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-.project-card {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: 25px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    backdrop-filter: blur(20px);
-
-    /* Flex properties for 2 per row */
-    flex: 0 0 calc(50% - 1rem); /* 50% width minus half the gap */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-/* Responsive: stack on smaller screens */
-@media (max-width: 768px) {
-    .project-card {
-        flex: 0 0 100%; /* full width */
-    }
-}
+        /* Responsive: stack on smaller screens */
+        @media (max-width: 768px) {
+            .project-card {
+                flex: 0 0 100%; /* full width */
+            }
+        }
 
 
         .project-image {
