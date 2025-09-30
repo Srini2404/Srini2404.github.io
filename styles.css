@@ -558,13 +558,13 @@
     gap: 2rem; /* spacing between cards */
 }
 
-@media (max-width: 768px) {
-    .projects-grid {
-        grid-template-columns: 1fr; /* stack on mobile */
-    }
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap; /* allow wrapping to next row */
+    gap: 2rem; /* spacing between cards */
+    justify-content: space-between; /* spread cards evenly */
 }
 
-/* Keep your existing card styles */
 .project-card {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
@@ -573,16 +573,21 @@
     transition: all 0.3s ease;
     cursor: pointer;
     backdrop-filter: blur(20px);
+
+    /* Flex properties for 2 per row */
+    flex: 0 0 calc(50% - 1rem); /* 50% width minus half the gap */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* optional for equal spacing */
+    justify-content: space-between;
 }
 
-.project-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 40px 80px rgba(99, 102, 241, 0.2);
-    border-color: rgba(99, 102, 241, 0.4);
+/* Responsive: stack on smaller screens */
+@media (max-width: 768px) {
+    .project-card {
+        flex: 0 0 100%; /* full width */
+    }
 }
+
 
         .project-image {
             width: 100%;
