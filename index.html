@@ -26,11 +26,11 @@
         .carousel-track {
             display: flex;
             transition: transform 0.5s ease-in-out;
-            width: 500%;
+            width: 300%;
         }
 
         .carousel-slide {
-            width: 20%;
+            width: 33.333%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -111,10 +111,10 @@
 
         @keyframes autoRotate {
             0%, 20% { transform: translateX(0%); }
-            25%, 45% { transform: translateX(-20%); }
-            50%, 70% { transform: translateX(-40%); }
-            75%, 95% { transform: translateX(-60%); }
-            100% { transform: translateX(-80%); }
+            25%, 45% { transform: translateX(-33.333%); }
+            50%, 70% { transform: translateX(-66.666%); }
+            75%, 95% { transform: translateX(0%); }
+            100% { transform: translateX(0%); }
         }
     </style>
 </head>
@@ -200,19 +200,13 @@
                     <div class="carousel-container" id="carouselContainer">
                         <div class="carousel-track" id="carouselTrack">
                             <div class="carousel-slide">
-                                <span class="emoji">🚀</span>
+                                <img src="images/Main_cropped.jpg" alt="Profile Image 1" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
                             </div>
                             <div class="carousel-slide">
-                                <span class="emoji">🔬</span>
+                                <img src="images/Trio.jpg" alt="Profile Image 2" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
                             </div>
                             <div class="carousel-slide">
-                                <span class="emoji">🤖</span>
-                            </div>
-                            <div class="carousel-slide">
-                                <span class="emoji">💡</span>
-                            </div>
-                            <div class="carousel-slide">
-                                <span class="emoji">🎯</span>
+                                <img src="images/profile3.jpg" alt="Profile Image 3" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
                             </div>
                         </div>
                         
@@ -223,8 +217,6 @@
                             <div class="indicator active" data-slide="0"></div>
                             <div class="indicator" data-slide="1"></div>
                             <div class="indicator" data-slide="2"></div>
-                            <div class="indicator" data-slide="3"></div>
-                            <div class="indicator" data-slide="4"></div>
                         </div>
                     </div>
                 </div>
@@ -297,7 +289,7 @@
                 <div class="publication-content">
                     <h3 class="publication-title">Addressing Modality Mismatch in Real Estate Recommendation Using Image Captioning</h3>
                     <p class="publication-authors">
-                        <span class="author-highlight">Srinivasan M</span>, Siddharth Kothari, Munagala Kalyan Ram, Sankalp Kothari, Jaya Sreevalsan Nair and Ujjwal Verma
+                        <span class="author-highlight">Srinivasan M</span>, Siddharth Kothari, Munagala Kalyan Ram, Sankalp Kothari, Raghuram Bharadwaj
                     </p>
                     <div class="publication-venue">
                         <span>📍</span>
@@ -450,57 +442,12 @@
     </section>
 
 
-    <!-- Visitor Counter Widget -->
-    <!-- <div class="visitor-counter" id="visitorCounter">
-        <div class="counter-label">Visitors</div>
-        <div class="counter-number">
-            <span class="counter-icon">👁️</span>
-            <span id="visitorCount">0</span>
-            <span class="live-indicator"></span>
-        </div>
-    </div> -->
-
-
-    <!-- Visitor Stats Widget -->
-    <!-- <div class="visitor-stats" id="visitorStats">
-        <div class="stats-title">Site Stats</div>
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-number" id="todayVisitors">0</div>
-                <div class="stat-label">Today</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" id="totalVisitors">0</div>
-                <div class="stat-label">Total</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" id="onlineUsers">1</div>
-                <div class="stat-label">Online</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" id="pageViews">0</div>
-                <div class="stat-label">Views</div>
-            </div>
-        </div>
-    </div> -->
-
-
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-left">
                     <p>Webpage made with GitHub Pages</p>
                 </div>
-                <!-- <div class="footer-stats">
-                    <div class="footer-stat">
-                        <div class="stat-value" id="footerVisitors">0</div>
-                        <div class="stat-text">Total Visitors</div>
-                    </div>
-                    <div class="footer-stat">
-                        <div class="stat-value" id="footerViews">0</div>
-                        <div class="stat-text">Page Views</div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </footer>
@@ -517,10 +464,10 @@
             const container = document.getElementById('carouselContainer');
             
             let currentSlide = 0;
-            const totalSlides = 5;
+            const totalSlides = 3;
             
             function updateCarousel() {
-                const translateX = -currentSlide * 20; // 20% per slide
+                const translateX = -currentSlide * 33.333; // 33.333% per slide
                 track.style.transform = `translateX(${translateX}%)`;
                 
                 // Update indicators
@@ -555,12 +502,10 @@
             let autoRotateInterval;
             
             function startAutoRotate() {
-                container.classList.add('auto-rotate');
                 autoRotateInterval = setInterval(nextSlide, 3000);
             }
             
             function stopAutoRotate() {
-                container.classList.remove('auto-rotate');
                 if (autoRotateInterval) {
                     clearInterval(autoRotateInterval);
                 }
