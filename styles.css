@@ -332,6 +332,39 @@
             backdrop-filter: blur(20px);
         }
 
+        /* Social Links in Hero */
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 1rem 1.5rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.95rem;
+    backdrop-filter: blur(20px);
+}
+
+.social-link-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.social-link:hover {
+    background: rgba(99, 102, 241, 0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.2);
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+}
+
         .btn-secondary:hover {
             background: rgba(99, 102, 241, 0.1);
             border-color: var(--accent-primary);
@@ -1081,7 +1114,13 @@
             }
             
             .cta-buttons {
-                justify-content: center;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-primary,
+            .social-link {
+                width: 100%;
             }
             
             .contact-links {
