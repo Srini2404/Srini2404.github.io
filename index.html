@@ -67,40 +67,60 @@
 
 
     <section class="section" id="about">
-    <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <!-- Visual Icon / Illustration -->
-            <div class="about-visual">
-                <span class="emoji">🚀</span>
-            </div>
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <!-- Carousel -->
+                <div class="about-visual">
+                    <div class="carousel-container">
+                        <div class="carousel-track" id="carouselTrack">
+                            <div class="carousel-slide">
+                                <span class="emoji">🚀</span>
+                            </div>
+                            <div class="carousel-slide">
+                                <span class="emoji">🔬</span>
+                            </div>
+                            <div class="carousel-slide">
+                                <span class="emoji">🤖</span>
+                            </div>
+                            <div class="carousel-slide">
+                                <span class="emoji">💡</span>
+                            </div>
+                            <div class="carousel-slide">
+                                <span class="emoji">🎯</span>
+                            </div>
+                        </div>
+                        
+                        <button class="carousel-button prev" id="prevBtn">‹</button>
+                        <button class="carousel-button next" id="nextBtn">›</button>
+                        
+                        <div class="carousel-indicators" id="indicators"></div>
+                    </div>
+                </div>
 
-            <!-- Textual Content -->
-            <div class="about-text">
-                <p>I'm <strong>M Srinivasan</strong>, currently a Visitor Research Intern at the <strong>TrustWare Research Group</strong> in SUTD Singapore under <a href="https://ezekiel-soremekun.github.io/" target="_blank">Prof. Dr Ezekiel</a> and <a href="https://www.linkedin.com/in/sarangnambiar/?originalSubdomain=sg" target="_blank">Sarang Nambiar</a>. My research focuses on <strong>LLM security, safety, and robustness</strong>, particularly exploring vulnerabilities such as backdoor attacks and building resilient AI systems.</p>
-                
-                <p>Prior to this, I worked at <strong>IBM Research Labs India</strong> with the <strong>AI for Quantum Data Engineering Team</strong>. There, I collaborated with leading research engineers  such as <a href="https://www.linkedin.com/in/nigelljones/?originalSubdomain=uk" target="_blank">Nigel Jones</a>, <a href="https://www.linkedin.com/in/karla-spuldaro-28000b14/?originalSubdomain=ca" target="_blank">Karla Spuldaro</a>, <a href="https://www.linkedin.com/in/baumgartel/">Darin Baumgartel</a> and <a href="https://www.linkedin.com/in/serjik-dikaleh-708515b6/?originalSubdomain=ca">Serjik Dikaleh</a>, where I helped design and implement <strong>GraphRAG systems for intelligent data catalogs</strong>, enabling data engineering teams to efficiently query and explore metadata.</p>
-                
-                <p>My work bridges <strong>AI research and practical engineering</strong>, combining cutting-edge machine learning techniques with real-world applications. I am deeply interested in <strong>ML system robustness, security in large language models, and graph-based retrieval systems</strong>. Beyond research, I enjoy hiking, photography, and travelling.</p>
+                <!-- Textual Content -->
+                <div class="about-text">
+                    <p>I'm <strong>M Srinivasan</strong>, currently a Visitor Research Intern at the <strong>TrustWare Research Group</strong> in SUTD Singapore under <a href="https://ezekiel-soremekun.github.io/" target="_blank">Prof. Dr Ezekiel</a> and <a href="https://www.linkedin.com/in/sarangnambiar/?originalSubdomain=sg" target="_blank">Sarang Nambiar</a>. My research focuses on <strong>LLM security, safety, and robustness</strong>, particularly exploring vulnerabilities such as backdoor attacks and building resilient AI systems.</p>
+                    
+                    <p>Prior to this, I worked at <strong>IBM Research Labs India</strong> with the <strong>AI for Quantum Data Engineering Team</strong>. There, I collaborated with leading research engineers such as <a href="https://www.linkedin.com/in/nigelljones/?originalSubdomain=uk" target="_blank">Nigel Jones</a>, <a href="https://www.linkedin.com/in/karla-spuldaro-28000b14/?originalSubdomain=ca" target="_blank">Karla Spuldaro</a>, <a href="https://www.linkedin.com/in/baumgartel/">Darin Baumgartel</a> and <a href="https://www.linkedin.com/in/serjik-dikaleh-708515b6/?originalSubdomain=ca">Serjik Dikaleh</a>, where I helped design and implement <strong>GraphRAG systems for intelligent data catalogs</strong>, enabling data engineering teams to efficiently query and explore metadata.</p>
+                    
+                    <p>My work bridges <strong>AI research and practical engineering</strong>, combining cutting-edge machine learning techniques with real-world applications. I am deeply interested in <strong>ML system robustness, security in large language models, and graph-based retrieval systems</strong>. Beyond research, I enjoy hiking, photography, and travelling.</p>
 
-                <!-- Skills Grid -->
-                <h3 class="skills-title">Skills & Tools</h3>
-                <div class="skills-grid">
-                    <div class="skill-item">Python</div>
-                    <div class="skill-item">PyTorch</div>
-                    <div class="skill-item">TensorFlow</div>
-                    <div class="skill-item">LLM Security</div>
-                    <div class="skill-item">GraphRAGs</div>
-                    <div class="skill-item">Neo4j</div>
-                    <div class="skill-item">Docker</div>
-                    <div class="skill-item">LangChain and LangSmith</div>
-                    <!-- <div class="skill-item">TypeScript</div> -->
-                    <!-- <div class="skill-item">Next.js</div> -->
+                    <!-- Skills Grid -->
+                    <h3 class="skills-title">Skills & Tools</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">Python</div>
+                        <div class="skill-item">PyTorch</div>
+                        <div class="skill-item">TensorFlow</div>
+                        <div class="skill-item">LLM Security</div>
+                        <div class="skill-item">GraphRAGs</div>
+                        <div class="skill-item">Neo4j</div>
+                        <div class="skill-item">Docker</div>
+                        <div class="skill-item">LangChain and LangSmith</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
 
 <section class="section" id="publications">
     <div class="container">
@@ -330,7 +350,7 @@
                 <div class="footer-left">
                     <p>Webpage made with GitHub Pages</p>
                 </div>
-                <div class="footer-stats">
+                <!-- <div class="footer-stats">
                     <div class="footer-stat">
                         <div class="stat-value" id="footerVisitors">0</div>
                         <div class="stat-text">Total Visitors</div>
@@ -339,7 +359,7 @@
                         <div class="stat-value" id="footerViews">0</div>
                         <div class="stat-text">Page Views</div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </footer>
