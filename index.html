@@ -7,6 +7,116 @@
     <link rel="icon" type="image/jpg" href="/images/Main_cropped.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Carousel specific styles */
+        .carousel-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 500%;
+        }
+
+        .carousel-slide {
+            width: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 300px;
+        }
+
+        .carousel-slide .emoji {
+            font-size: 120px;
+            line-height: 1;
+            user-select: none;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-button:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel-button.prev {
+            left: 20px;
+        }
+
+        .carousel-button.next {
+            right: 20px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        /* Auto-rotate animation */
+        .carousel-container.auto-rotate .carousel-track {
+            animation: autoRotate 15s infinite;
+        }
+
+        @keyframes autoRotate {
+            0%, 20% { transform: translateX(0%); }
+            25%, 45% { transform: translateX(-20%); }
+            50%, 70% { transform: translateX(-40%); }
+            75%, 95% { transform: translateX(-60%); }
+            100% { transform: translateX(-80%); }
+        }
+    </style>
 </head>
 <body>
     <div class="bg-canvas"></div>
@@ -21,6 +131,7 @@
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
 
+
     <header>
         <nav>
             <div class="logo">Portfolio</div>
@@ -34,6 +145,7 @@
             </ul>
         </nav>
     </header>
+
 
    <section class="hero" id="home">
     <div class="container">
@@ -59,6 +171,7 @@
                 </div>
             </div>
 
+
             <!-- Hero Image -->
             <div class="hero-image">
                 <div class="profile-container">
@@ -77,13 +190,14 @@
     </section>
 
 
+
     <section class="section" id="about">
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <!-- Carousel -->
                 <div class="about-visual">
-                    <div class="carousel-container">
+                    <div class="carousel-container" id="carouselContainer">
                         <div class="carousel-track" id="carouselTrack">
                             <div class="carousel-slide">
                                 <span class="emoji">🚀</span>
@@ -105,9 +219,16 @@
                         <button class="carousel-button prev" id="prevBtn">‹</button>
                         <button class="carousel-button next" id="nextBtn">›</button>
                         
-                        <div class="carousel-indicators" id="indicators"></div>
+                        <div class="carousel-indicators" id="indicators">
+                            <div class="indicator active" data-slide="0"></div>
+                            <div class="indicator" data-slide="1"></div>
+                            <div class="indicator" data-slide="2"></div>
+                            <div class="indicator" data-slide="3"></div>
+                            <div class="indicator" data-slide="4"></div>
+                        </div>
                     </div>
                 </div>
+
 
                 <!-- Textual Content -->
                 <div class="about-text">
@@ -116,6 +237,7 @@
                     <p>Prior to this, I worked at <strong>IBM Research Labs India</strong> with the <strong>AI for Quantum Data Engineering Team</strong>. There, I collaborated with leading research engineers such as <a href="https://www.linkedin.com/in/nigelljones/?originalSubdomain=uk" target="_blank">Nigel Jones</a>, <a href="https://www.linkedin.com/in/karla-spuldaro-28000b14/?originalSubdomain=ca" target="_blank">Karla Spuldaro</a>, <a href="https://www.linkedin.com/in/baumgartel/">Darin Baumgartel</a> and <a href="https://www.linkedin.com/in/serjik-dikaleh-708515b6/?originalSubdomain=ca">Serjik Dikaleh</a>, where I helped design and implement <strong>GraphRAG systems for intelligent data catalogs</strong>, enabling data engineering teams to efficiently query and explore metadata.</p>
                     
                     <p>My work bridges <strong>AI research and practical engineering</strong>, combining cutting-edge machine learning techniques with real-world applications. I am deeply interested in <strong>ML system robustness, security in large language models, and graph-based retrieval systems</strong>. Beyond research, I enjoy hiking, photography, and travelling.</p>
+
 
                     <!-- Skills Grid -->
                     <h3 class="skills-title">Skills & Tools</h3>
@@ -133,6 +255,7 @@
             </div>
         </div>
     </section>
+
 
 <section class="section" id="publications">
     <div class="container">
@@ -156,6 +279,7 @@
                     <p class="publication-abstract">
                         We study inland water body segmentation in SAR images using U-Net, focusing on the impact of noisy manual annotations. By simulating annotation errors as adversarial attacks, we show U-Net tolerates limited corruption before performance degrades. This highlights the critical role of annotation quality in segmentation tasks.
 
+
                     </p>
                     <div class="publication-links">
                         <a href="https://arxiv.org/abs/2505.01884" class="pub-link">📄 Preprint</a>
@@ -164,6 +288,7 @@
                     </div>
                 </div>
             </div>
+
 
             <div class="publication-card">
                 <div class="publication-header">
@@ -216,6 +341,7 @@
     </div>
 </section>
 
+
     <section class="section" id="projects">
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
@@ -258,6 +384,7 @@
                     </div>
                 </div>
 
+
                 <!-- Project 3: Learning Performance Improving Code Edits -->
                 <div class="project-card">
                     <div class="project-image">⚡</div>
@@ -276,6 +403,7 @@
                         </div>
                     </div>
                 </div>
+
 
                 <!-- Project 4: Heterogeneous Database Synchronization System -->
                 <div class="project-card">
@@ -300,6 +428,7 @@
         </div>
     </section>
 
+
     <section class="section contact" id="contact">
         <div class="container">
             <h2 class="section-title">Let's Create Something Amazing</h2>
@@ -320,6 +449,7 @@
         </div>
     </section>
 
+
     <!-- Visitor Counter Widget -->
     <!-- <div class="visitor-counter" id="visitorCounter">
         <div class="counter-label">Visitors</div>
@@ -329,6 +459,7 @@
             <span class="live-indicator"></span>
         </div>
     </div> -->
+
 
     <!-- Visitor Stats Widget -->
     <!-- <div class="visitor-stats" id="visitorStats">
@@ -353,6 +484,7 @@
         </div>
     </div> -->
 
+
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -373,6 +505,74 @@
         </div>
     </footer>
 
+
     <script src="script.js"></script>
+    <script>
+        // Carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.getElementById('carouselTrack');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const indicators = document.querySelectorAll('.indicator');
+            const container = document.getElementById('carouselContainer');
+            
+            let currentSlide = 0;
+            const totalSlides = 5;
+            
+            function updateCarousel() {
+                const translateX = -currentSlide * 20; // 20% per slide
+                track.style.transform = `translateX(${translateX}%)`;
+                
+                // Update indicators
+                indicators.forEach((indicator, index) => {
+                    indicator.classList.toggle('active', index === currentSlide);
+                });
+            }
+            
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateCarousel();
+            }
+            
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateCarousel();
+            }
+            
+            // Button event listeners
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+            
+            // Indicator event listeners
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    currentSlide = index;
+                    updateCarousel();
+                });
+            });
+            
+            // Auto-rotate functionality
+            let autoRotateInterval;
+            
+            function startAutoRotate() {
+                container.classList.add('auto-rotate');
+                autoRotateInterval = setInterval(nextSlide, 3000);
+            }
+            
+            function stopAutoRotate() {
+                container.classList.remove('auto-rotate');
+                if (autoRotateInterval) {
+                    clearInterval(autoRotateInterval);
+                }
+            }
+            
+            // Start auto-rotate on load
+            startAutoRotate();
+            
+            // Pause on hover
+            container.addEventListener('mouseenter', stopAutoRotate);
+            container.addEventListener('mouseleave', startAutoRotate);
+        });
+    </script>
 </body>
 </html>
