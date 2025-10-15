@@ -545,13 +545,53 @@
             box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
         }
 
+       :root {
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --accent-primary: #6366f1;
+            --accent-secondary: #8b5cf6;
+            --accent-tertiary: #ec4899;
+            --text-primary: #ffffff;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            padding: 2rem 0;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--text-primary);
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+
         /* Projects Section */
-                
         .projects-grid {
             display: flex;
-            flex-wrap: wrap; /* allow wrapping to next row */
-            gap: 2rem; /* spacing between cards */
-            justify-content: space-between; /* spread cards evenly */
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
         }
 
         .project-card {
@@ -562,21 +602,22 @@
             transition: all 0.3s ease;
             cursor: pointer;
             backdrop-filter: blur(20px);
-
-            /* Flex properties for 2 per row */
-            flex: 0 0 calc(50% - 1rem); /* 50% width minus half the gap */
+            flex: 0 0 calc(50% - 1rem);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
         }
 
-        /* Responsive: stack on smaller screens */
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
+        }
+
         @media (max-width: 768px) {
             .project-card {
-                flex: 0 0 100%; /* full width */
+                flex: 0 0 100%;
             }
         }
-
 
         .project-image {
             width: 100%;
@@ -602,6 +643,9 @@
 
         .project-content {
             padding: 2.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-content h3 {
@@ -638,6 +682,7 @@
         .project-links {
             display: flex;
             gap: 1.5rem;
+            margin-top: auto;
         }
 
         .project-links a {
