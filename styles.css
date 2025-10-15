@@ -828,98 +828,37 @@
         }
 
         /* Contact Section */
-        :root {
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --accent-primary: #6366f1;
-            --accent-secondary: #8b5cf6;
-            --accent-tertiary: #ec4899;
-            --text-primary: #ffffff;
-            --text-secondary: #cbd5e1;
-            --text-muted: #94a3b8;
+        .contact {
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 70%),
+                var(--glass-bg);
+            backdrop-filter: blur(20px);
+            padding: 4rem 2rem;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
-
-        .hero-section {
-            width: 100%;
-            max-width: 1200px;
-        }
-
-        .hero-content {
+        /* Contact text container */
+        .contact-content {
             text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
-        .hero-text h1 {
-            font-size: 3.5rem;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .highlight {
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .subtitle {
-            font-size: 1.4rem;
+        .contact-content p {
+            font-size: 1.2rem;
             color: var(--text-secondary);
             margin-bottom: 3rem;
-            font-weight: 400;
+            line-height: 1.6;
         }
 
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
+        /* Links grid */
+        .contact-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.2rem;
         }
 
-        .btn-primary {
-            padding: 1rem 2.5rem;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            color: var(--text-primary);
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            border: none;
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.5);
-        }
-
-        /* Social Links Container */
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-        }
-
-        /* Each social link styled as a glass button */
-        .social-link {
+        /* Each link styled as a glass button */
+        .contact-link {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -933,11 +872,10 @@
             transition: all 0.3s ease;
             font-weight: 500;
             font-size: 0.95rem;
-            backdrop-filter: blur(20px);
         }
 
         /* Icon inside the link */
-        .social-link-icon {
+        .contact-link img {
             width: 20px;
             height: 20px;
             object-fit: contain;
@@ -945,36 +883,12 @@
         }
 
         /* Hover effect */
-        .social-link:hover {
+        .contact-link:hover {
             background: rgba(99, 102, 241, 0.1);
             transform: translateY(-4px);
             box-shadow: 0 10px 25px rgba(99, 102, 241, 0.2);
             border-color: var(--accent-primary);
             color: var(--accent-primary);
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .subtitle {
-                font-size: 1.1rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .social-links {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .social-link {
-                width: 100%;
-            }
         }
 
 
